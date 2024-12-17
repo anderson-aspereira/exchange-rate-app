@@ -1,0 +1,29 @@
+<h2>Exchange Rate History</h2>
+
+<div>
+  <span>Coin: {{coin}}</span>
+</div>
+
+<ul class="exchange">
+  
+  <div>
+    <span > Value </span>
+    <span >  - </span>
+    <span class="date"> Date</span>
+   
+    
+  </div>
+  <li *ngFor="let e of exchangeRateHistory; let i=index;">
+    <span class="badge"> - {{e.currentValue}}</span>
+    <span class="badge"> {{e.date}}</span>
+
+    
+  </li>
+
+  <div >
+    <button (click)="voltar()">
+      Back
+    </button>
+  </div>
+</ul>
+

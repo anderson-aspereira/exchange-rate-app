@@ -1,0 +1,22 @@
+<h2>Exchange Rate List</h2>
+
+<div>
+  <button (click)="updateExchangeRate()">
+    Update exchange rate
+  </button>
+</div>
+
+<ul class="exchange">
+  
+  <li *ngFor="let e of exchangeRate; let i=index;">
+
+    <a routerLink="/exchange-rate-history/{{e.id}}">
+      <span class="badge">Check history</span>
+    </a>
+    <span class="badge"> - {{e.code}}</span>
+    <span class="badge"> - {{e.codein}}</span>
+    <span class="badge"> - {{e.name}}</span>
+    <span class="badge"> - {{e.currentValue}}</span>
+    <span class="badge"> - {{e.date}}</span>
+  </li>
+</ul>
