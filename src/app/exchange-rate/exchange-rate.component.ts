@@ -1,30 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ExchangeRate } from '../model/ExchangeRate';
 import { ExchangeRateService } from '../services/ExchangeRateService';
 import { Router } from '@angular/router';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @Component({
   selector: 'app-exchange-rate',
   templateUrl: './exchange-rate.component.html',
   styleUrls: ['./exchange-rate.component.scss']
 })
+
+
 export class ExchangeRateComponent implements OnInit {
 
-  exchangeRate: ExchangeRate[] = [];
-  
-
+  exchangeRateList: ExchangeRate[] = [];
+  values= 'BRL USD'.split(' ');
+  selectedCode: string ="BRL";
+ 
   constructor(
     public rest: ExchangeRateService,
     private router: Router) { }
 
   ngOnInit(): void {
-    this.listExchangeRate();
+    this.listExchangeRate(this.selectedCode);
+
   }
 
-  listExchangeRate(): void {
-    this.rest.listExchangeRate().subscribe({
+  onChange(e:any) {
+   
+    this.selectedCode = e.target.value;
+    this.listExchangeRate(this.selectedCode);
+}
+
+  listExchangeRate(code:string): void {
+    this.rest.listExchangeRate(code).subscribe({
       next: (resp) => {
-        this.exchangeRate = resp;
+        this.exchangeRateList = resp;
       },
       error: (e) => {
         console.log(e);
@@ -34,11 +45,11 @@ export class ExchangeRateComponent implements OnInit {
   }
 
   updateExchangeRate(): void {
-    this.rest.listExchangeRate()
-    this.rest.updateExchangeRate().subscribe({
+   
+    this.rest.updateExchangeRate(this.selectedCode).subscribe({
       next: (resp) => {
-        this.exchangeRate = resp;
-        this.listExchangeRate()
+        this.exchangeRateList = resp;
+        this.listExchangeRate(this.selectedCode);
       },
       error: (e) => {
         console.log(e);
@@ -51,3 +62,4 @@ export class ExchangeRateComponent implements OnInit {
  
 
 }
+

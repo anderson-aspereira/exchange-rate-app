@@ -7,6 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpErrorInterceptor } from './interceptors/HttpErrorInterceptor';
 import { ExchangeRateComponent } from './exchange-rate/exchange-rate.component';
 import { ExchangeRateHistoryComponent } from './exchange-rate-history/exchange-rate-history.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
+
 
 @NgModule({
   declarations: [
@@ -14,12 +17,15 @@ import { ExchangeRateHistoryComponent } from './exchange-rate-history/exchange-r
 
     ExchangeRateComponent,
     ExchangeRateHistoryComponent
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    NgxDatatableModule
+
   ],
   providers: [
     {

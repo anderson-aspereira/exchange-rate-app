@@ -9,7 +9,9 @@ import { ExchangeRate } from '../model/ExchangeRate';
 
 const endpoint = 'http://localhost:8080/exchangeRate';
 
-const localUrl = 'assets/data/smartphone.json';
+const localUrl = 'assets/data/exchangerate.json';
+
+
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -45,17 +47,18 @@ export class ExchangeRateService {
 
 
 
-  listExchangeRate(): Observable<any> {
-    //httpOptions.headers = httpOptions.headers.set('Authorization', 'my-new-auth-token');
-    return this.http.get<ExchangeRate[]>(endpoint, httpOptions).pipe(
+  listExchangeRate(code:string): Observable<any> {
+    
+    
+    return this.http.get<ExchangeRate[]>(endpoint + "?code=" +code).pipe(
       retry(3), catchError(this.handleError));
   }
 
 
  
 
-  updateExchangeRate(): Observable<any> {
-    return this.http.put<any>(endpoint + '/updateAll', {}).pipe(
+  updateExchangeRate(code: string): Observable<any> {
+    return this.http.put<any>(endpoint + '/updateAll?code='+ code, {}).pipe(
       catchError(this.handleError)
     );
   }

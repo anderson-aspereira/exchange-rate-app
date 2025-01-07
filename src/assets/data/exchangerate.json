@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "code": "USD",
+        "codein": "BRL",
+        "name": "Dólar Americano/Real Brasileiro",
+        "currentValue": 6.1808,
+        "date": "2024-12-26T19:30:02"
+    },
+    {
+        "id": 2,
+        "code": "EUR",
+        "codein": "BRL",
+        "name": "Euro/Real Brasileiro",
+        "currentValue": 6.4102,
+        "date": "2024-12-26T19:55:46"
+    },
+    {
+        "id": 3,
+        "code": "BTC",
+        "codein": "BRL",
+        "name": "Bitcoin/Real Brasileiro",
+        "currentValue": 593800.0,
+        "date": "2024-12-26T19:56:04"
+    },
+    {
+        "id": 4,
+        "code": "CAD",
+        "codein": "BRL",
+        "name": "Dólar Canadense/Real Brasileiro",
+        "currentValue": 4.2846,
+        "date": "2024-12-26T19:55:38"
+    },
+    {
+        "id": 5,
+        "code": "GBP",
+        "codein": "BRL",
+        "name": "Libra Esterlina/Real Brasileiro",
+        "currentValue": 7.728,
+        "date": "2024-12-26T19:56:04"
+    },
+    {
+        "id": 6,
+        "code": "MXN",
+        "codein": "BRL",
+        "name": "Peso Mexicano/Real Brasileiro",
+        "currentValue": 0.3056,
+        "date": "2024-12-26T19:51:05"
+    },
+    {
+        "id": 7,
+        "code": "AUD",
+        "codein": "BRL",
+        "name": "Dólar Australiano/Real Brasileiro",
+        "currentValue": 3.8394,
+        "date": "2024-12-26T19:55:36"
+    },
+    {
+        "id": 8,
+        "code": "CHF",
+        "codein": "BRL",
+        "name": "Franco Suíço/Real Brasileiro",
+        "currentValue": 6.867,
+        "date": "2024-12-26T19:55:40"
+    },
+    {
+        "id": 9,
+        "code": "JPY",
+        "codein": "BRL",
+        "name": "Iene Japonês/Real Brasileiro",
+        "currentValue": 0.03914,
+        "date": "2024-12-26T19:55:44"
+    },
+    {
+        "id": 10,
+        "code": "NZD",
+        "codein": "BRL",
+        "name": "Dólar Neozelandês/Real Brasileiro",
+        "currentValue": 3.4767,
+        "date": "2024-12-26T19:55:09"
+    }
+]

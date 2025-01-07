@@ -5,10 +5,14 @@
     Update exchange rate
   </button>
 </div>
-
+<div>
+  <select (change)="onChange($event)">
+    <option *ngFor="let i of values">{{i}}</option>
+</select>
+</div>
 <ul class="exchange">
   
-  <li *ngFor="let e of exchangeRate; let i=index;">
+  <li *ngFor="let e of exchangeRateList; let i=index;">
 
     <a routerLink="/exchange-rate-history/{{e.id}}">
       <span class="badge">Check history</span>
